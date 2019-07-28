@@ -1,5 +1,5 @@
-from snippets.models import Post
-from snippets.serializers import PostSerializer
+from post.models import Post
+from post.serializer import PostSerializer
 from rest_framework import generics
 
 # rest_framework/generics.py
@@ -11,11 +11,11 @@ from rest_framework import generics
 # RetrieveUpdateDestroyAPIView
 # https://github.com/encode/django-rest-framework/blob/0e1c5d313232a131bb4a1a414abf921744ab40e0/rest_framework/generics.py#L274
 
-class SnippetList(generics.ListCreateAPIView):
-    queryset = Snippet.objects.all()
-    serializer_class = SnippetSerializer
+class PostList(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
 
-class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Snippet.objects.all()
-    serializer_class = SnippetSerializer
+class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
